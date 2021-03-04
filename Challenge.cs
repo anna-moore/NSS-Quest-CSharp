@@ -43,7 +43,7 @@ namespace Quest
             }
             else
             {
-                Console.WriteLine("You have failed the challenge, there will be consequences.");
+                Console.WriteLine("You have failed this challenge, there will be consequences.");
                 adventurer.Awesomeness -= _awesomenessChange;
             }
 

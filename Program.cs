@@ -9,7 +9,7 @@ namespace Quest
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("What is your name: ");
+            Console.Write("What is your name: ");
             string UserName = Console.ReadLine();
             // Create a few challenges for our Adventurer's quest
             // The "Challenge" Constructor takes three arguments
@@ -20,7 +20,7 @@ namespace Quest
             Challenge theAnswer = new Challenge(
                 "What's the answer to life, the universe and everything?", 42, 25);
 
-            Console.WriteLine(DateTime.Now.Second);
+            //Console.WriteLine(DateTime.Now.Second);
             Challenge whatSecond = new Challenge(
                 "What is the current second?", DateTime.Now.Second, 50);
 
@@ -79,6 +79,25 @@ namespace Quest
             else
             {
                 Console.WriteLine("I guess you did...ok? ...sorta. Still, you should get out of my sight.");
+            }
+
+
+            Console.WriteLine("That Quest was so much fun! Would you like to play again?");
+            Console.Write("Enter Y or N: ");
+            string again = Console.ReadLine().ToLower();
+
+            if (again == "y")
+            {
+                Console.WriteLine("");
+                Console.WriteLine("Enjoy Playying Again");
+                foreach (Challenge challenge in challenges)
+                {
+                    challenge.RunChallenge(theAdventurer);
+                }
+            }
+            else
+            {
+                return;
             }
         }
     }
