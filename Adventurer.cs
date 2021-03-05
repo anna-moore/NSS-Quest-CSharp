@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 namespace Quest
 {
     // An instance of the Adventurer class is an object that will undergo some challenges
@@ -14,7 +16,10 @@ namespace Quest
 
         public Robe ColorfulRobe { get; set; }
 
+
+
         // A constructor to make a new Adventurer object with a given name
+
         public Adventurer(string name, Robe color)
         {
             Name = name;
@@ -47,6 +52,20 @@ namespace Quest
             }
 
             return $"Adventurer, {Name}, is {status}";
+        }
+
+        public string GetDescription()
+        {
+            List<string> RobeColors = new List<string>();
+            RobeColors = ColorfulRobe.Color;
+            string StrRobeColors = "";
+
+            for (int i = 0; i < ColorfulRobe.Color.Count; i++)
+            {
+                StrRobeColors += $" {ColorfulRobe.Color[i]} ";
+            }
+
+            return $"The adventurer's name is { Name}; they are wearing { StrRobeColors }";
         }
     }
 }

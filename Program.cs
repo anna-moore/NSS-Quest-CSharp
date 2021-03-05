@@ -12,7 +12,6 @@ namespace Quest
             bool Again = true;
             Console.Write("What is your name: ");
             string UserName = Console.ReadLine();
-
             while (Again)
             {
 
@@ -52,7 +51,14 @@ namespace Quest
                 int maxAwesomeness = 100;
 
                 // Make a new "Adventurer" object using the "Adventurer" class
-                Adventurer theAdventurer = new Adventurer(UserName);
+                Robe color = new Robe()
+                {
+                    Color = new List<string> { "red", "color2", "color3" },
+                    Length = 4,
+                };
+                Adventurer theAdventurer = new Adventurer(UserName, color);
+
+                Console.WriteLine(theAdventurer.GetDescription());
 
                 // A list of challenges for the Adventurer to complete
                 // Note we can use the List class here because have the line "using System.Collections.Generic;" at the top of the file.
