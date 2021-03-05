@@ -56,7 +56,13 @@ namespace Quest
                     Color = new List<string> { "red", "color2", "color3" },
                     Length = 4,
                 };
-                Adventurer theAdventurer = new Adventurer(UserName, color);
+
+                Hat hatShine = new Hat()
+                {
+                    ShininessLevel = 4,
+                };
+
+                Adventurer theAdventurer = new Adventurer(UserName, color, hatShine);
 
                 Console.WriteLine(theAdventurer.GetDescription());
 
