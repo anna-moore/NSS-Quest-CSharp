@@ -58,16 +58,14 @@ namespace Quest
 
         public string GetDescription()
         {
-            List<string> RobeColors = new List<string>();
-            RobeColors = ColorfulRobe.Color;
-            string StrRobeColors = "";
 
+            string StrRobeColors = "";
             for (int i = 0; i < ColorfulRobe.Color.Count; i++)
             {
                 StrRobeColors += $" {ColorfulRobe.Color[i]} ";
             }
 
-            return $"The adventurer's name is { Name}; they are wearing { StrRobeColors }; their hat is { HatShine.ShininessDescription } Shine";
+            return $"The adventurer's name is { Name }; they are wearing { StrRobeColors }; their hat has { HatShine.ShininessDescription } Shine";
         }
     }
 }
